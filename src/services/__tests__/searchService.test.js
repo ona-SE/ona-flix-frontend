@@ -243,7 +243,7 @@ describe('SearchService', () => {
 
       const history = searchService.getSearchHistory()
 
-      expect(localStorageMock.getItem).toHaveBeenCalledWith('gitpodflix_search_history')
+      expect(localStorageMock.getItem).toHaveBeenCalledWith('onaflix_search_history')
       expect(history).toEqual(mockHistory)
     })
 
@@ -271,7 +271,7 @@ describe('SearchService', () => {
       searchService.addToSearchHistory('Batman')
 
       expect(localStorageMock.setItem).toHaveBeenCalledWith(
-        'gitpodflix_search_history',
+        'onaflix_search_history',
         JSON.stringify(['Batman', 'Superman'])
       )
     })
@@ -306,7 +306,7 @@ describe('SearchService', () => {
     it('should clear search history', () => {
       searchService.clearSearchHistory()
 
-      expect(localStorageMock.removeItem).toHaveBeenCalledWith('gitpodflix_search_history')
+      expect(localStorageMock.removeItem).toHaveBeenCalledWith('onaflix_search_history')
     })
 
     it('should handle localStorage errors when clearing', () => {
